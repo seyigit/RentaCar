@@ -1,7 +1,4 @@
-1.CarRental database import in Sql Server Management and etc.
+1.ConsoleUI Set As Startup Project 
 
 
-2.ConsoleUI Set As Startup Project 
-
-
-3.Build Project
+2.Build Project
