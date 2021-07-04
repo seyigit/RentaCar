@@ -1,0 +1,59 @@
+﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Results;
+using DataAccss.Abstract;
+using Entities.Concrete;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Business.Concrete
+{
+    public class ColorManager : IColorService
+    {
+        IColorDal  _colorDal;
+
+        public ColorManager(IColorDal colorDal)
+        {
+            _colorDal = colorDal;
+        }
+
+        public IResult Add(Color color)
+        {
+            _colorDal.Add(color);
+
+            return new SuccesResult(Messages.AddToColor);
+        }
+
+        public IResult Delete(Color color)
+        {
+            _colorDal.Delete(color);
+
+            return new SuccesResult(Messages.DeleteToColorSuccessMessage);
+
+        }
+
+        public IDataResult<List<Color>> GetAll()
+        {
+            
+            return new SuccessDataResult<List<Color>>(_colorDal.GetAll(),Messages.GetAllFilterSuccessMessage);
+        }
+
+        public IDataResult<List<Color>> GetById(int id)
+
+        {
+            if (DateTime.Now.Hour<13)
+            {
+                return new ErrorDataResult<List<Color>>(Messages.InvalidFilter);
+            }
+            return new SuccessDataResult<List<Color>>(_colorDal.GetAll(p => p.ColorId == id),Messages.GetByIdFilterSuccessMessage);
+        }
+
+        public IResult Update(Color color)
+        {
+            _colorDal.Update(color);
+
+            return new SuccesResult(Messages.UpdateToColorSuccessMessage);
+        }
+    }
+}
