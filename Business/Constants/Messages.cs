@@ -21,5 +21,15 @@ namespace Business.Constants
         public static string DeleteToColorSuccessMessage = "Renk başarıyla silindi.";
         public static string UpdateToColorSuccessMessage = "Renk başarıyla güncellendi.";
         public static string InvalidFilter = "Bu saate ürün girilemez";
+        public static string AddToUser;
+        public static string DeleteToUserSuccessMessage;
+        public static string UpdateToUserMessage;
+        public static string AddToCustomerSuccessMessage;
+        public static string DeleteToCustomerSuccessMessage;
+        public static string UpdateToCustomerSuccessMessage;
+        public static string AddToRentalSuccessMessage;
+        public static string DeleteToRentalSuccessMessage;
+        public static string UpdateToRentalSuccessMessage;
+        public static string AddToRentalInvalid =" Araç teslim alınmadı kiralama yapılamaz.";
     }
 }

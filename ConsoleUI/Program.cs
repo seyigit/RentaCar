@@ -10,12 +10,39 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            ColorCrudOperationsMethod();
+            AddRentalCheckMethod();
+
+            //UsersAddOperations();
+
+            //ColorCrudOperationsMethod();
             //BrandCrudOperationsMethod();
             //CarDtoDetailsMethod();
 
             //CarCrudOperationsMethod();
+            
+        }
 
+        private static void AddRentalCheckMethod()
+        {
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+
+            Rentals rentals = new Rentals() { CarId = 1, CustomerId = 2, RentDate = "2021", ReturnDate = null };
+
+            var result = rentalManager.Add(rentals);
+            Console.WriteLine(result.Message);
+        }
+
+        private static void UsersAddOperations()
+        {
+            UserManager userManager = new UserManager(new EfUserDal());
+
+            Users users1 = new Users() { FirstName = "Sedat", LastName = "Yiğit", Email = "gnctrkcll947@gmail.com", Password = "Sede_7272" };
+            Users users2 = new Users() { FirstName = "Serhat", LastName = "Yiğit", Email = "gnctrkc947@gmail.com", Password = "Sere_7272" };
+            Users users3 = new Users() { FirstName = "Umut", LastName = "Yiğit", Email = "umut@gmail.com", Password = "Umut_7272" };
+
+            userManager.Add(users1);
+            userManager.Add(users2);
+            userManager.Add(users3);
         }
 
         private static void ColorCrudOperationsMethod()
