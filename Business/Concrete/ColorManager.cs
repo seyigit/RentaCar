@@ -42,11 +42,7 @@ namespace Business.Concrete
         public IDataResult<List<Color>> GetById(int id)
 
         {
-            if (DateTime.Now.Hour<13)
-            {
-                return new ErrorDataResult<List<Color>>(Messages.InvalidFilter);
-            }
-            return new SuccessDataResult<List<Color>>(_colorDal.GetAll(p => p.ColorId == id),Messages.GetByIdFilterSuccessMessage);
+            return new SuccessDataResult<List<Color>>(_colorDal.GetAll(p => p.ColorId == id), Messages.GetByIdFilterSuccessMessage);
         }
 
         public IResult Update(Color color)
