@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using Core.Utilities.Helpers;
 using DataAccss.Concrete.InMemory;
 using DataAccss.EntityFramework;
 using Entities.Concrete;
@@ -10,7 +11,7 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            AddRentalCheckMethod();
+            //AddRentalCheckMethod();
 
             //UsersAddOperations();
 
@@ -19,7 +20,22 @@ namespace ConsoleUI
             //CarDtoDetailsMethod();
 
             //CarCrudOperationsMethod();
-            
+
+            GetByCarIdMethod();
+
+        }
+
+        private static void GetByCarIdMethod()
+        {
+            CarImagesManager image = new CarImagesManager(new EfCarImagesDal(), new FileHelper());
+            var result = image.GetByImageByCarId(2);
+            if (result.Success)
+            {
+                foreach (var item in result.Data)
+                {
+                    Console.WriteLine(item.ImagePath);
+                }
+            }
         }
 
         private static void AddRentalCheckMethod()
