@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Core.Utilities.Jwt;
+using Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -34,5 +36,11 @@ namespace Business.Constants
         public static string AddToCarImageSuccessMessage="Resim Başarılı bir şekilde eklendi.";
         public static string DeleteToCarImageSuccessMessage="Resim başarılı bir şekilde silindi.";
         public static string UpdateToCarImageSuccessMessage= "Resim başarılı bir şekilde güncellendi.";
+        public static string UserNotFound="Kullanıcı Bulunamadı";
+        public static string PasswordError = "Password Hatalı";
+        public static string SuccessfulLogin="Giriş Başarılı";
+        public static string ErrorUSerExist="Bu email ile daha önce kayıt olunmuş";
+        public static string UserRegistered="Kullanıcı Başarıyla Kaydedildi.";
+        public static string AccessTokenCreate = "Access Token Başarıyla Oluşturuldu.";
     }
 }

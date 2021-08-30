@@ -48,18 +48,18 @@ namespace ConsoleUI
             Console.WriteLine(result.Message);
         }
 
-        private static void UsersAddOperations()
-        {
-            UserManager userManager = new UserManager(new EfUserDal());
+        //private static void UsersAddOperations()
+        //{
+        //    UserManager userManager = new UserManager(new EfUserDal());
 
-            Users users1 = new Users() { FirstName = "Sedat", LastName = "Yiğit", Email = "gnctrkcll947@gmail.com", Password = "Sede_7272" };
-            Users users2 = new Users() { FirstName = "Serhat", LastName = "Yiğit", Email = "gnctrkc947@gmail.com", Password = "Sere_7272" };
-            Users users3 = new Users() { FirstName = "Umut", LastName = "Yiğit", Email = "umut@gmail.com", Password = "Umut_7272" };
+        //    Users users1 = new Users() { FirstName = "Sedat", LastName = "Yiğit", Email = "gnctrkcll947@gmail.com", Password = "Sede_7272" };
+        //    Users users2 = new Users() { FirstName = "Serhat", LastName = "Yiğit", Email = "gnctrkc947@gmail.com", Password = "Sere_7272" };
+        //    Users users3 = new Users() { FirstName = "Umut", LastName = "Yiğit", Email = "umut@gmail.com", Password = "Umut_7272" };
 
-            userManager.Add(users1);
-            userManager.Add(users2);
-            userManager.Add(users3);
-        }
+        //    userManager.Add(users1);
+        //    userManager.Add(users2);
+        //    userManager.Add(users3);
+        //}
 
         private static void ColorCrudOperationsMethod()
         {
